@@ -62,33 +62,18 @@ class Nodo:
     
 
 class Character:
-    def __init__(self, name, life):
+    def __init__(self, life):
         """
         Constructor of the Character class.
-
-        name: Name of the character.
         life: Current life value of the character (0 to 100).
         """
-        self.name = name
         self.life = life
-
-    def get_name(self):
-        """
-        Returns the name of the character.
-        """
-        return self.name
 
     def get_life(self):
         """
         Returns the current life of the character.
         """
         return self.life
-
-    def set_name(self, name):
-        """
-        Modifies the name of the character.
-        """
-        self.name = name
 
     def set_life(self, life):
         """
@@ -104,7 +89,6 @@ class Character:
         print(f"╔{border}╗")
         print(f"║{' Character Info '.center(30)}║")
         print(f"╠{border}╣")
-        print(f"║ Name: {self.name.ljust(22)}║")
         print(f"║ Life: {str(self.life).ljust(22)}/100║")
         print(f"╚{border}╝")
 

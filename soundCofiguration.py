@@ -7,11 +7,9 @@ path = os.path.join(os.path.dirname(__file__), 'sounds')
 class Sound:
     def __init__(self, name, position, volume, velocity):
         # Build the file path using the base path and the name of the file
-        sound_path = os.path.join(path, f"[MONO] {name}")
+        # sound_path = os.path.join(path, f"[MONO] {name}")
+        sound_path = os.path.join(path, name)
 
-        # currentDir = os.path.dirname(os.path.abspath(__file__))
-        # fileM = os.path.join(currentDir, "Music", self.__sound)
-        
         self.buffer = openal.oalOpen(sound_path)
         self.buffer.set_position(position)
         self.buffer.set_gain(volume)
