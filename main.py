@@ -1,5 +1,4 @@
 import openal
-import time
 from soundCofiguration import Sound, ListSounds
 from structures import Nodo, Character
 from data import get_data
@@ -7,8 +6,8 @@ from data import get_data
 
 def create_Nodo(current_nodo_data):
     return  Nodo(
-        current_nodo_data["text"],
-        ListSounds([Sound(s["name"], s["position"], s["volume"], s["velocity"]) for s in current_nodo_data["sounds_config"]]),
+        current_nodo_data["dialog"],
+        current_nodo_data["sounds"],
         current_nodo_data["options"],
         current_nodo_data["well_being"]
     )
@@ -41,7 +40,7 @@ def main():
     narrative = get_data()
 
     # Start the story at the "inicio" node
-    current_nodo_key = "inicio"
+    current_nodo_key = "INICIO"
     current_nodo_data = narrative[current_nodo_key]
     
     # Create the current node
